@@ -7,7 +7,6 @@ Functional helpers for handling RUT Chile written in `Python 3.6` without depend
 
 --------------------------------------------------------------------------------
 
-
 ## Using:
 
 - rut_clean
