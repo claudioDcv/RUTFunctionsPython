@@ -1,7 +1,7 @@
 # create by claudio.dcv@gmail.com
 import re
 import math
-
+from itertools import cycle
 
 '''
 @param paramrut {string}= 16.761.256-9
@@ -17,15 +17,14 @@ rut_clean = lambda paramrut : re.sub(r'[^0-9kK]+', '', str(paramrut)).upper()
 def rut_calc_dv(paramrut):
     rut = rut_clean(str(paramrut))
     reverse_rut = ''.join(c for c in rut if c.isdigit())[::-1]
-    result = 0
-    n = 1
+    n = cycle(range(2, 8))
 
-    for digit_rut in reverse_rut:
-        n += 1
-        result += int(digit_rut) * n
-        n = 1 if n == 7 else n
+    def for_calc_dv(i, n, rr, out):
+        out += int(rr[i]) * next(n)
+        i += 1
+        return out if i == len(rr) else for_calc_dv(i, n, rr, out)
 
-    result = 11 - (result % 11)
+    result = 11 - (for_calc_dv(0, n, reverse_rut, 0) % 11)
     result = 0 if result == 11 else result
     return str('K' if result == 10 else result)
 
