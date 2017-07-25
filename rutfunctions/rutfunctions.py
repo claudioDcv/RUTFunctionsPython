@@ -91,7 +91,7 @@ rut_get_dv = lambda paramrut : rut_clean(paramrut.split('-', 1)[1])
 @param paramrut {string} = 16751256
 @return {string} = 167512569
 '''
-rut_add_dv = lambda paramrut : '{}-{}'.format(paramrut, rut_calc_dv(paramrut))
+rut_add_dv = lambda paramrut : '{}{}'.format(paramrut, rut_calc_dv(paramrut))
 
 '''
 test
