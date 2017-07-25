@@ -1,91 +1,70 @@
 # RUTfunctions
 
-[![Build Status](https://travis-ci.org/claudioDcv/RUTfunctions.svg?branch=master)](https://travis-ci.org/claudioDcv/RUTfunctions)
 
-[![codecov](https://codecov.io/gh/claudioDcv/RUTfunctions/branch/master/graph/badge.svg)](https://codecov.io/gh/claudioDcv/RUTfunctions)
+Functional helpers for handling RUT Chile written in `Python 3.6` without dependencies
 
-Functional helpers for handling RUT Chile written in `ES6` without dependencies
-
-> Helpers funcionales para manipulación de RUT Chileno escritos en `ES6` sin dependencias
+> Helpers funcionales para manipulación de RUT Chileno escritos en `Python 3.6` sin dependencias
 
 --------------------------------------------------------------------------------
 
-## Install NPM
-
-`npm install rutfunctions`
-
-## Install YARN
-
-`yarn add rutfunctions`
-
-## How to Test
-
-Run one, or a combination of the following commands to lint and test your code:
-
-- npm run lint -- lint the source code with ESLint
-- npm test -- run unit tests with Mocha
-- npm run test:watch -- run unit tests with Mocha, and watch files for changes
-- npm run test:cover -- run unit tests with code coverage by Istanbul
-
-## Base in <https://github.com/kriasoft/babel-starter-kit>
 
 ## Using:
 
-- rutClean
+- rut_clean
 
 ```
 @param paramrut {string}= 16.761.256-9
 @return {string} = 167512569
 ```
 
-- rutValidate
+- rut_validate
 
 ```
 @param paramrut {string} = 16.761.256-9
 @return {boolean} = true
 ```
 
-```javascript
-// Example
-rutValidate('167512569')
-true
-rutValidate('167512568')
-false
-rutValidate('16.751.256-8')
-false
-rutValidate('16.751.256-9')
-true
+```python
+# Example
+rut_validate('167512569')
+True
+rut_validate('167512568')
+False
+rut_validate('16.751.256-8')
+False
+rut_validate('16.751.256-9')
+True
 ```
 
-- rutFormat
+- rut_format
 
 ```
 @param paramrut {number/string} = 167512569
 @return {string} = 16.761.256-9
 ```
 
-- rutGetDv
+- rut_get_dv
 
 ```
 @param paramrut {number/string} = 16751256 / 16.751.256
 @return {string} = 9
 ```
 
-- rutGetNumber
+- rut_get_number
 
 ```
 @param paramrut {string} = 16.751.256-9 / 16751256-9
 @return {string} = 16751256
 ```
 
-- rutCalcDv
+- rut_calc_dv
 
 ```
 @param paramrut {string} = 16.751.256-9 / 16751256-9
 @return {string} = 9
 ```
 
-- rutAddDv
+- rut_add_dv
 
 ```
 @param paramrut {string} = 16751256
