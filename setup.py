@@ -8,6 +8,6 @@ setup(
   author_email = 'claudio.dcv@gmail.com',
   url = 'https://github.com/claudioDcv/RUTFunctionsPython', # use the URL to the github repo
   download_url = 'https://github.com/{user_name}/{repo}/tarball/0.1',
-  keywords = ['python-functions', 'es6', 'chilean-rut-utils', 'functional-programming'],
+  keywords = ['python-functions', 'chilean-rut-utils', 'functional-programming'],
   classifiers = [],
 )
