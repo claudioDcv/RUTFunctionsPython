@@ -42,7 +42,7 @@ True
 @return {string} = 16.761.256-9
 ```
 
-- rut_get_dv
+- rut_calc_dv
 
 ```
 @param paramrut {number/string} = 16751256 / 16.751.256
@@ -56,7 +56,7 @@ True
 @return {string} = 16751256
 ```
 
-- rut_calc_dv
+- rut_get_dv
 
 ```
 @param paramrut {string} = 16.751.256-9 / 16751256-9
