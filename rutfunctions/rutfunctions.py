@@ -8,7 +8,7 @@ def rut_clean(paramrut):
     @param paramrut {string}= 16.761.256-9
     @return {string} = 167512569
     '''
-    return lambda paramrut: re.sub(r'[^0-9kK]+', '', str(paramrut)).upper()
+    return re.sub(r'[^0-9kK]+', '', str(paramrut)).upper()
 
 
 def rut_calc_dv(paramrut):
@@ -78,7 +78,7 @@ def rut_get_number(paramrut):
     @param paramrut {string} = 16.751.256-9 / 16751256-9
     @return {string} = 16751256
     '''
-    return lambda paramrut: rut_clean(paramrut.split('-', 1)[0])
+    return rut_clean(paramrut.split('-', 1)[0])
 
 
 def rut_get_dv(paramrut):
@@ -86,7 +86,7 @@ def rut_get_dv(paramrut):
     @param paramrut {string} = 16.751.256-9 / 16751256-9
     @return {string} = 9
     '''
-    return lambda paramrut: rut_clean(paramrut.split('-', 1)[1])
+    return rut_clean(paramrut.split('-', 1)[1])
 
 
 def rut_add_dv(paramrut):
@@ -94,19 +94,4 @@ def rut_add_dv(paramrut):
     @param paramrut {string} = 16751256
     @return {string} = 167512569
     '''
-    return lambda paramrut: '{}{}'.format(paramrut, rut_calc_dv(paramrut))
-
-# test
-#
-# test1 = rut_clean('16.752.156-9');
-# test2 = rut_calc_dv('16751256');
-# test3 = rut_validate('16.751.256-9');
-# test4 = rut_validate('16.751.256-8');
-# test5 = rut_format('167512569');
-# test6 = rut_get_number('16751256');
-# test7 = rut_get_dv('16.751.256-9');
-# test8 = rut_add_dv('16751256');
-#
-# print(test1, test2, test3, test4, test5, test6, test7, test8);
-# result:
-# ('167521569', '9', True, False, '16.751.256-9', '16751256', '9', '16751256-9'
+    return '{}{}'.format(paramrut, rut_calc_dv(paramrut))
