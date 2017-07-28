@@ -66,7 +66,7 @@ def rut_format(paramrut):
     reverse_rut = rut[0:-1][::-1]
 
     def for_in_rut(i, rr, out):
-        out = rr[i:i+3][::-1] + '.' + out
+        out = rr[i:i + 3][::-1] + '.' + out
         i += 3
         return out if i > len(rr) else for_in_rut(i, rr, out)
 
